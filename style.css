@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0d1a;
+  color: white;
+  text-align: center;
+}
+.container {
+  padding: 2rem;
+}
+header h1 {
+  font-size: 2rem;
+  color: #9ee8ff;
+}
+.logo {
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.address-section input {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 1rem;
+}
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+.plan {
+  background: #1c1c2b;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 0 10px #000;
+}
+.plan.gold { border-top: 5px solid gold; }
+.plan.silver { border-top: 5px solid silver; }
+.plan.bronze { border-top: 5px solid peru; }
+.plan button {
+  background: #00c9a7;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('btc.png'), url('ltc.png'), url('doge.png');
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 80px, 80px, 80px;
+  background-position: 10% 10%, 50% 50%, 90% 80%;
+  animation: floatCoins 30s linear infinite;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+@keyframes floatCoins {
+  0% {
+    background-position: 10% 10%, 50% 50%, 90% 80%;
+  }
+  50% {
+    background-position: 15% 30%, 50% 40%, 85% 60%;
+  }
+  100% {
+    background-position: 10% 10%, 50% 50%, 90% 80%;
+  }
+}
+
+.review {
+  background: #222;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: left;
+}
+.review p {
+  margin: 0.5rem 0;
+}
+ol {
+  text-align: left;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+ol li {
+  margin: 1rem 0;
+}

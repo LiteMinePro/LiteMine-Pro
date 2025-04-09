@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LiteMinePro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><img src="litecoin.png" alt="Litecoin" class="logo" /> LiteMinePro</h1>
+      <p class="tagline">Your gateway to crypto mining</p>
+    </header>
+
+    <section class="address-section">
+      <input type="text" placeholder="Enter your Litecoin address" />
+    </section>
+
+    <section class="plans">
+      <div class="plan gold">
+        <h2>Gold Plan</h2>
+        <p>0.5 LTC - High Profit</p>
+        <button>Start Mining</button>
+      </div>
+      <div class="plan silver">
+        <h2>Silver Plan</h2>
+        <p>0.2 LTC - Medium Profit</p>
+        <button>Start Mining</button>
+      </div>
+      <div class="plan bronze">
+        <h2>Bronze Plan</h2>
+        <p>0.05 LTC - Starter</p>
+        <button>Start Mining</button>
+      </div>
+    </section>
+
+    <footer>
+      <p>Make sure to send only to the following addresses:</p>
+      <ul>
+        <li>Bitcoin: 16v7wek8tM5rtVb6hbbCGhvu3RPwdZYicc</li>
+        <li>Litecoin: ltc1qaudjtktds3pg0zd93xw4naegq5h7lekrt5k2ff</li>
+        <li>Dogecoin: DGGFE3saLnuibxtgtCtDZ2XkjhrzoTLwU7</li>
+      </ul>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+
+<!-- زر تواصل وهمي -->
+<button id="chatBtn" style="position: fixed; bottom: 20px; right: 20px; background: #0a0; color: white; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer; z-index: 1000;">
+  Live Support
+</button>
+
+<!-- نافذة الدردشة الوهمية -->
+<div id="chatBox" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 300px; background: #111; color: #0f0; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px #0f0; z-index: 1001;">
+  <p><strong>LiteMinePro Support:</strong></p>
+  <p>Hello! How can we help you today?</p>
+  <p style="font-size: 0.9em; color: #999;">(This is a simulated support window)</p>
+</div>
+
+<script>
+  document.getElementById("chatBtn").onclick = function() {
+    var box = document.getElementById("chatBox");
+    if (box.style.display === "none") {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  }
+</script>
+
+<div id="hall-of-fame" style="background: #111; color: #0f0; padding: 1rem; margin-top: 2rem; border-radius: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
+  <h2 style="text-align: center;">Top Earners</h2>
+  <ul id="topEarners" style="list-style: none; padding: 0;">
+    <li>1. ltc1q...k2ff — 0.145 LTC</li>
+    <li>2. 16v7...zyicc — 0.009 BTC</li>
+    <li>3. DGGF...TLwU7 — 32.55 DOGE</li>
+  </ul>
+</div>
+
+<script>
+  const earners = [
+    ["ltc1q...k2ff", "LTC", 0.145],
+    ["16v7...zyicc", "BTC", 0.009],
+    ["DGGF...TLwU7", "DOGE", 32.55]
+  ];
+
+  setInterval(() => {
+    // زيادة وهمية عشوائية لكل ربح
+    for (let i = 0; i < earners.length; i++) {
+      let bonus = (Math.random() * 0.01).toFixed(3);
+      if (earners[i][1] === "DOGE") bonus = (Math.random() * 3).toFixed(2);
+      earners[i][2] = (parseFloat(earners[i][2]) + parseFloat(bonus)).toFixed(3);
+    }
+    const list = earners.map((e, i) => 
+      `<li>${i+1}. ${e[0]} — ${e[2]} ${e[1]}</li>`
+    ).join("");
+    document.getElementById("topEarners").innerHTML = list;
+  }, 30000); // تحديث كل 30 ثانية
+</script>
+
+</body>
+
+</html>
